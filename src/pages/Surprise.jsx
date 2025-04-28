@@ -9,27 +9,26 @@ const Surprise = () => {
     const { name = 'Stranger', age, relibility, gender } = location.state || {};
 
     // Audio setup
-  const audio = new Audio('/public/bg.mp3'); // Adjust the path to your audio file
-  audio.loop = true; // Enable looping for repeated playback
+    const audio = new Audio('/bg.mp3'); // Corrected path (file in public/)
+    audio.loop = true; // Enable looping for repeated playback
 
     const handleSurprise = () => {
         console.log('Surprise button clicked, setting surprise to true');
         setSurprise(true);
     };
-
     // Play audio when surprise is true
-  useEffect(() => {
-    if (surprise) {
-      audio.play().catch((error) => {
-        console.error('Error playing audio:', error);
-      });
-    }
-    // Cleanup: Pause and reset audio when component unmounts or surprise changes
-    return () => {
-      audio.pause();
-      audio.currentTime = 0; // Reset to start
-    };
-  }, [surprise]);
+    useEffect(() => {
+        if (surprise) {
+            audio.play().catch((error) => {
+                console.error('Error playing audio:', error);
+            });
+        }
+        // Cleanup: Pause and reset audio when component unmounts or surprise changes
+        return () => {
+            audio.pause();
+            audio.currentTime = 0; // Reset to start
+        };
+    }, [surprise]);
 
     return (
         <div className="relative min-h-screen flex flex-col justify-center items-center py-8 sm:py-12 bg-gradient-to-b from-gray-900 via-indigo-950 to-black overflow-hidden">
