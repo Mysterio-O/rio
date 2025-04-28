@@ -192,7 +192,7 @@ const Random = () => {
       ))}
       <motion.button
         onClick={handleRandomText}
-        className="btn btn-animated btn-wide text-sm sm:text-base z-10"
+        className="btn btn-animated btn-wide text-xl h-full sm:text-base z-10"
         whileHover={{ scale: 1.2, boxShadow: '0 0 30px rgba(255,64,129,0.8)', rotate: 5 }}
         whileTap={{ scale: 0.9, rotate: -5 }}
         initial={{ opacity: 0, y: 30 }}

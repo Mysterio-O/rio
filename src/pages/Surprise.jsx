@@ -124,7 +124,7 @@ const Surprise = () => {
                         >
                             I Love You {name}. Will you be mine?
                         </motion.h3>
-                        <div className="mt-4">
+                        <div className="mt-1">
                             <Random />
                         </div>
                     </motion.div>
